@@ -49,7 +49,9 @@ fn part1(vec_a: &[i32], vec_b: &[i32]) -> i32 {
         .sum()
 }
 
-fn part1(vec_a: &[i32], vec_b: &[i32]) -> i32 { 
-    
+fn part2(vec_a: &[i32], vec_b: &[i32]) -> i32 { 
+    vec_a.iter()
+        .filter(|&a|)
+
 }
 
