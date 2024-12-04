@@ -53,12 +53,12 @@ fn part1(vec_a: Vec<i32>) -> bool {
         asc  &= w[0] < w[1];
         desc &= w[0] > w[1];
     }
-    
+
     let min = *deltas.iter().min().unwrap();
     let max = *deltas.iter().max().unwrap();
-    let rate_safety = min > 0 && max < 3;
+    let rate_safety = min > 0 && max < 4;
 
-   rate_safety && ( asc ^ desc ) 
+    rate_safety && ( asc ^ desc ) 
 }
 
 // fn part2(vec_a: &[i32], vec_b: &[i32]) -> i32 { 
