@@ -45,8 +45,8 @@ fn open_file_as_reader(filepath: &str) -> Result<BufReader<File>> {
 
 fn part1(vec_a: Vec<i32>) -> bool { 
     let mut deltas: Vec<i32> = Vec::new();
-    let mut asc = true;
-    let mut desc = true;    
+    let mut asc: bool = true;
+    let mut desc: bool = true;    
 
     for w in vec_a.windows(2) {
         deltas.push((w[0] - w[1]).abs());
@@ -56,14 +56,14 @@ fn part1(vec_a: Vec<i32>) -> bool {
 
     let min = *deltas.iter().min().unwrap();
     let max = *deltas.iter().max().unwrap();
-    let rate_safety = min > 0 && max < 4;
+
+    let rate_safety: bool = min > 0 && max < 4;
 
     rate_safety && ( asc ^ desc ) 
 }
 
-// fn part2(vec_a: &[i32], vec_b: &[i32]) -> i32 { 
-//     vec_a.iter()
-//         .filter(|&a|)
+fn part2() -> i32 { 
 
-// }
+
+}
 
