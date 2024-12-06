@@ -61,9 +61,3 @@ fn part1(vec_a: Vec<i32>) -> bool {
 
     rate_safety && ( asc ^ desc ) 
 }
-
-fn part2() -> i32 { 
-
-
-}
-
