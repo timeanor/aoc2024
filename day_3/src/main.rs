@@ -10,13 +10,11 @@ fn main() -> Result<()> {
     let reader = readfile(&args[1])?;
     
 
-    let re = Regex::new(r"(?:mul\(\d+,\d+\))|(do(?:n't)?\(\))").unwrap();
+    let re = Regex::new(r"(mul\(\d+,\d+\))|(do(?:n't)?\(\))").unwrap();
 
     let matches: Vec<&str> = re.find_iter(&reader).map(|m| m.as_str()).collect();
 
-    let part1_ans = part1(matches);;
-
-
+    let part1_ans = part1(matches);
 
     println!("Answer: {part1_ans}");
     Ok(())
@@ -39,8 +37,20 @@ fn open_file_as_reader(filepath: &str) -> Result<BufReader<File>> {
     Ok(BufReader::new(file))
 }
 
-fn part1(matches: Vec<&str>) -> i32 { 
-    
+fn bothparts(matches: Vec<&str>) -> (i32,i32) { 
+    let part1: i32 = 0;
+    let part2: i32 = 0;
+
+    let enabled: bool = true;
+
+    for m in matches.iter() {
+       if m.contains("do()") => enabled = true;
+       if m.contains("don't()") => enabled = true;
+    }
+
+    (part1, part2)
 }
 
-
+fn multiply(mul: str) -> i32 {
+    let mul = Regex::new(r"mul\((?<l>\d+),(?<r>\d+)\)").unwrap();
+}
